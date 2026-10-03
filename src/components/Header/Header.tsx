@@ -42,8 +42,8 @@ export default function Header() {
           <Image
             src="/clinic-logo.png"
             alt="Logo Clínica Benvenuti"
-            width={70}
-            height={70}
+            width={50}
+            height={50}
             priority
           />
           <div className={styles.brandText}>

@@ -34,12 +34,17 @@
   .logoWrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: $spacing-2;
     text-decoration: none;
     cursor: pointer;
 
     img {
       object-fit: cover;
+      margin-top: -5px;
+      @include respond-to("md") {
+        margin-top: -10px;
+      }
     }
 
     .brandText {
