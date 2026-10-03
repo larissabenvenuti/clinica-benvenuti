@@ -1,0 +1,109 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.benefits {
+  @include clean-section;
+  background: linear-gradient(
+    to bottom,
+    $bg-light 0%,
+    $white 150px,
+    $white 100%
+  );
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond-to("lg") {
+    padding: $spacing-24 $spacing-12;
+  }
+
+  .container {
+    max-width: 76rem;
+    margin: 0 auto;
+    width: 100%;
+    @include flex-column;
+    gap: $spacing-12;
+  }
+
+  .header {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+
+    .leadText {
+      font-family: $font-family-serif;
+      font-size: $font-size-xl;
+      color: $marrom-escuro;
+      line-height: 1.5;
+      font-weight: 500;
+
+      @include respond-to("md") {
+        font-size: $font-size-2xl;
+      }
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+
+    @include respond-to("md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to("lg") {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-8;
+    }
+  }
+
+  .card {
+    background-color: $bg-light;
+    border: 1px solid rgba($bege-marrom, 0.2);
+    border-radius: $radius-xl;
+    padding: $spacing-8;
+    @include flex-column;
+    align-items: flex-start;
+    gap: $spacing-4;
+    transition:
+      box-shadow $transition-base,
+      border-color $transition-base;
+
+    &:hover {
+      box-shadow: $shadow-md;
+      border-color: rgba($terracota, 0.3);
+
+      .iconBox {
+        background-color: $terracota;
+        color: $white;
+      }
+    }
+
+    .cardHeader {
+      @include flex-center;
+      gap: $spacing-4;
+    }
+
+    .iconBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: $radius-full;
+      background-color: rgba($salvia-escuro, 0.1);
+      color: $salvia-escuro;
+      transition: all $transition-base;
+      flex-shrink: 0;
+    }
+
+    p {
+      font-size: $font-size-base;
+      color: rgba($marrom-escuro, 0.85);
+      line-height: 1.6;
+      font-weight: 400;
+    }
+  }
+}
