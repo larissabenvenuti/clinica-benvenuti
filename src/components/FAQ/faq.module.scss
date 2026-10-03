@@ -1,0 +1,66 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.faq {
+  @include clean-section;
+  background-color: $background;
+  scroll-margin-top: 0 !important;
+  
+  .container {
+    max-width: 50rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: $terracota;
+    text-align: center;
+    margin-bottom: $spacing-12;
+    @include respond-to("md") {
+      font-size: 3.25rem;
+    }
+  }
+
+  .list {
+    @include flex-column;
+    gap: $spacing-4;
+
+    .item {
+      background: $white;
+      border-radius: $radius-xl;
+      overflow: hidden;
+      box-shadow: $shadow-soft;
+      border: 1px solid rgba($bege-marrom, 0.3);
+
+      .question {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: $spacing-4 $spacing-6;
+        @include flex-between;
+        font-family: $font-family-sans;
+        font-size: $font-size-base;
+        font-weight: 600;
+        color: $marrom-escuro;
+        cursor: pointer;
+
+        span:last-child {
+          color: $terracota;
+          font-size: 1.25rem;
+        }
+      }
+
+      .answerWrapper {
+        overflow: hidden;
+      }
+
+      .answer {
+        padding: 0 $spacing-6 $spacing-6 $spacing-6;
+        font-size: $font-size-sm;
+        color: $marrom-escuro;
+        line-height: 1.7;
+      }
+    }
+  }
+}
