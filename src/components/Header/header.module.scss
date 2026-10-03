@@ -38,6 +38,10 @@
     text-decoration: none;
     cursor: pointer;
 
+    img {
+      object-fit: cover;
+    }
+
     .brandText {
       display: flex;
       flex-direction: column;
