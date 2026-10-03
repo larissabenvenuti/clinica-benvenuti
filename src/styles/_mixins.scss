@@ -1,0 +1,208 @@
+@use "@/styles/variables" as *;
+
+@mixin respond-to($bp) {
+  @if $bp == "sm" {
+    @media (min-width: $bp-sm) {
+      @content;
+    }
+  } @else if $bp == "md" {
+    @media (min-width: $bp-md) {
+      @content;
+    }
+  } @else if $bp == "lg" {
+    @media (min-width: $bp-lg) {
+      @content;
+    }
+  } @else if $bp == "xl" {
+    @media (min-width: $bp-xl) {
+      @content;
+    }
+  } @else if $bp == "2xl" {
+    @media (min-width: $bp-2xl) {
+      @content;
+    }
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($terracota, 0.35);
+    transition: box-shadow $transition-fast;
+  }
+}
+
+@mixin disabled-state {
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+@mixin glassmorphism {
+  background: rgba($card, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba($border, 0.6);
+  box-shadow: $shadow-soft;
+}
+
+@mixin glassmorphism-strong {
+  background: rgba($card, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba($border, 0.5);
+  box-shadow: $shadow-lg;
+}
+
+@mixin clean-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $spacing-20 $spacing-6;
+
+  @include respond-to("lg") {
+    padding: $spacing-24 $spacing-12;
+  }
+}
+
+@mixin card-clean {
+  background: $card;
+  border-radius: $radius-xl;
+  padding: $spacing-8;
+  box-shadow: $shadow-soft;
+  border: 1px solid rgba($bege-marrom, 0.25);
+  transition:
+    transform $transition-base,
+    box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadow-md;
+  }
+}
+
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba($salvia-escuro, 0.3);
+    border-radius: $radius-full;
+    &:hover {
+      background: rgba($terracota, 0.5);
+    }
+  }
+}
+
+@mixin input-base {
+  width: 100%;
+  height: 3rem;
+  padding: 0 $spacing-4;
+  background: rgba($white, 0.8);
+  border: 1px solid rgba($bege-marrom, 0.6);
+  border-radius: $radius;
+  font: 500 $font-size-sm $font-family-sans;
+  color: $foreground;
+  outline: none;
+  transition:
+    border-color $transition-fast,
+    box-shadow $transition-fast;
+
+  &::placeholder {
+    color: rgba($salvia-escuro, 0.7);
+  }
+  &:hover {
+    border-color: rgba($terracota, 0.4);
+  }
+  &:focus {
+    border-color: $terracota;
+    box-shadow: 0 0 0 3px rgba($terracota, 0.15);
+  }
+  @include disabled-state;
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-2;
+  border: none;
+  cursor: pointer;
+  border-radius: $radius;
+  font: 600 $font-size-sm $font-family-sans;
+  transition:
+    transform $transition-fast,
+    background $transition-fast,
+    box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+  &:active {
+    transform: translateY(0);
+  }
+  @include focus-ring;
+  @include disabled-state;
+}
+
+@mixin page-container {
+  position: relative;
+  width: 100%;
+  background-color: $background;
+  color: $foreground;
+  overflow-x: hidden;
+}
+
+@mixin orb($size, $alpha: 0.12) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  border-radius: $radius-full;
+  background: radial-gradient(
+    circle,
+    rgba($terracota, $alpha),
+    transparent 70%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}

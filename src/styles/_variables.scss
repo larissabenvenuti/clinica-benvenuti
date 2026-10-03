@@ -1,0 +1,61 @@
+$terracota: #ae4525;
+$bege-marrom: #d6c3a5;
+$bege-amarelo: #eadcc1;
+$salvia-claro: #a3b19b;
+$salvia-escuro: #5f7355;
+$marrom-escuro: #4d3c2f;
+$bg-light: #fbf9f5;
+$white: #ffffff;
+
+$background: $bg-light;
+$foreground: $marrom-escuro;
+$primary: $terracota;
+$card: $white;
+$border: $bege-marrom;
+$muted-foreground: $salvia-escuro;
+
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-2xl: 1536px;
+
+$spacing-1: 0.25rem; // 4px
+$spacing-2: 0.5rem; // 8px
+$spacing-2: 0.75rem; // 12px
+$spacing-4: 1rem; // 16px
+$spacing-6: 1.5rem; // 24px
+$spacing-8: 2rem; // 32px
+$spacing-10: 2.5rem; // 40px
+$spacing-12: 3rem; // 48px
+$spacing-16: 4rem; // 64px
+$spacing-20: 5rem; // 80px
+$spacing-24: 6rem; // 96px
+
+$radius-sm: 4px;
+$radius: 8px;
+$radius-md: 12px;
+$radius-xl: 16px;
+$radius-full: 9999px;
+
+$font-family-serif: "Playfair Display", serif;
+$font-family-sans: "Montserrat", sans-serif;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 2rem;
+$font-size-4xl: 2.5rem;
+$font-size-5xl: 3.25rem;
+$font-size-6xl: 3.5rem;
+
+$transition-fast: 0.15s ease-in-out;
+$transition-base: 0.25s ease-in-out;
+$transition-slow: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+$shadow-soft: 0 4px 20px rgba(77, 60, 47, 0.04);
+$shadow-md: 0 10px 30px rgba(77, 60, 47, 0.08);
+$shadow-lg: 0 20px 40px rgba(77, 60, 47, 0.12);
