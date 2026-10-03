@@ -1,0 +1,214 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.approaches {
+  @include clean-section;
+  background-color: $bg-light;
+  padding: $spacing-16 $spacing-6;
+  scroll-margin-top: 0 !important;
+
+  @include respond-to("lg") {
+    padding: $spacing-24 $spacing-12;
+  }
+
+  .container {
+    max-width: 84rem;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-12;
+
+    @include respond-to("lg") {
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0 $spacing-12;
+      gap: $spacing-16;
+    }
+  }
+
+  .stickyPanel {
+    @include flex-column;
+    gap: $spacing-10;
+    flex: 1;
+
+    @include respond-to("lg") {
+      position: sticky;
+      top: 120px;
+      max-width: 45%;
+    }
+
+    .introBlock {
+      .label {
+        font-size: $font-size-sm;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: $salvia-escuro;
+        margin-bottom: $spacing-2;
+        display: inline-block;
+      }
+
+      h2 {
+        font-family: $font-family-serif;
+        font-size: 2.5rem;
+        color: $terracota;
+        line-height: 1.2;
+        margin-bottom: $spacing-6;
+        letter-spacing: -0.5px;
+
+        @include respond-to("md") {
+          font-size: 3rem;
+        }
+      }
+
+      .leadText {
+        font-size: $font-size-lg;
+        line-height: 1.7;
+        color: $marrom-escuro;
+        font-weight: 400;
+      }
+    }
+
+    .commitmentCard {
+      background-color: rgba($terracota, 0.05);
+      border: 1px solid rgba($terracota, 0.15);
+      padding: $spacing-8;
+      border-radius: $radius-xl;
+
+      .cardHeader {
+        display: flex;
+        align-items: center;
+        gap: $spacing-2;
+        color: $terracota;
+        margin-bottom: $spacing-4;
+
+        h3 {
+          font-family: $font-family-serif;
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+      }
+
+      p {
+        font-size: $font-size-base;
+        color: rgba($marrom-escuro, 0.85);
+        line-height: 1.6;
+        margin-bottom: $spacing-4;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .contentPanel {
+    flex: 1;
+    @include flex-column;
+    gap: $spacing-16;
+
+    @include respond-to("lg") {
+      padding-top: $spacing-8;
+    }
+
+    h3 {
+      font-size: 1.75rem;
+      font-family: $font-family-serif;
+      color: $marrom-escuro;
+      margin-bottom: $spacing-2;
+    }
+
+    .subText {
+      font-size: $font-size-base;
+      color: rgba($marrom-escuro, 0.7);
+      margin-bottom: $spacing-6;
+    }
+
+    .therapiesList {
+      @include flex-column;
+      gap: $spacing-6;
+
+      .therapyItem {
+        background-color: $white;
+        border: 1px solid rgba($bege-marrom, 0.3);
+        border-radius: $radius-xl;
+        padding: $spacing-6;
+        transition: box-shadow $transition-base;
+
+        &:hover {
+          box-shadow: $shadow-md;
+          border-color: rgba($salvia-escuro, 0.3);
+        }
+
+        .therapyHeader {
+          display: flex;
+          align-items: center;
+          gap: $spacing-2;
+          margin-bottom: $spacing-2;
+
+          .tag {
+            background-color: rgba($salvia-escuro, 0.1);
+            color: $salvia-escuro;
+            font-size: $font-size-xs;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: $radius-full;
+            letter-spacing: 0.5px;
+          }
+
+          h4 {
+            font-size: 1.25rem;
+            color: $terracota;
+            font-weight: 600;
+          }
+        }
+
+        p {
+          font-size: $font-size-sm;
+          color: rgba($marrom-escuro, 0.85);
+          line-height: 1.6;
+        }
+      }
+    }
+
+    .demandsGrid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-4;
+
+      @include respond-to("md") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .demandCard {
+        display: flex;
+        align-items: flex-start;
+        gap: $spacing-2;
+        background-color: $white;
+        padding: $spacing-4;
+        border-radius: $radius-xl;
+        border: 1px solid rgba($bege-marrom, 0.2);
+
+        .checkIcon {
+          color: $salvia-escuro;
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+
+        h4 {
+          font-size: 1rem;
+          color: $marrom-escuro;
+          font-weight: 600;
+          margin-bottom: 4px;
+        }
+
+        p {
+          font-size: 0.85rem;
+          color: rgba($marrom-escuro, 0.75);
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+}
