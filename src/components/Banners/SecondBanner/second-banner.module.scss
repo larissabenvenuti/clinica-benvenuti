@@ -1,0 +1,97 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.banner {
+  width: 100%;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  background-color: $bg-light;
+  padding: $spacing-24 $spacing-6 $spacing-12;
+  position: relative;
+  overflow: hidden;
+
+  .waveTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    color: rgba($bege-marrom, 0.25);
+    z-index: 1;
+    pointer-events: none;
+    transform: rotate(180deg);
+  }
+
+  .container {
+    max-width: 72rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-10;
+    align-items: center;
+
+    @include respond-to("lg") {
+      grid-template-columns: 1.2fr 1fr;
+      gap: $spacing-20;
+    }
+  }
+
+  .textBlock {
+    h2 {
+      font-family: $font-family-serif;
+      font-size: 2.5rem;
+      color: $marrom-escuro;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      border-left: 4px solid $terracota;
+      padding-left: $spacing-6;
+
+      @include respond-to("md") {
+        font-size: 3.25rem;
+      }
+    }
+  }
+
+  .actionBlock {
+    @include flex-column;
+    gap: $spacing-6;
+    align-items: flex-start;
+
+    p {
+      font-size: $font-size-lg;
+      color: rgba($marrom-escuro, 0.85);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-2;
+      padding: $spacing-4 $spacing-8;
+      background-color: transparent;
+      color: $terracota;
+      font-size: $font-size-base;
+      font-weight: 600;
+      border: 2px solid $terracota;
+      border-radius: $radius-full;
+      text-decoration: none;
+      transition: all $transition-base;
+
+      &:hover {
+        background-color: $terracota;
+        color: $white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba($terracota, 0.15);
+      }
+    }
+  }
+}
