@@ -1,0 +1,100 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.reach {
+  @include clean-section;
+  background-color: $bg-light;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    max-width: 72rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-16;
+    align-items: center;
+
+    @include respond-to("lg") {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-24;
+    }
+  }
+
+  .subtitle {
+    font-size: 2rem;
+    color: $marrom-escuro;
+    font-family: $font-family-serif;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+
+    @include respond-to("md") {
+      font-size: 2rem;
+    }
+  }
+
+  .text {
+    font-size: $font-size-lg;
+    color: rgba($marrom-escuro, 0.8);
+    line-height: 1.6;
+    max-width: 400px;
+    margin-top: $spacing-2;
+  }
+
+  .leftCol {
+    @include flex-column;
+    gap: $spacing-4;
+
+    .counterWrapper {
+      display: flex;
+      align-items: flex-start;
+      color: $terracota;
+      font-family: $font-family-serif;
+      line-height: 1;
+      margin-bottom: -$spacing-4;
+
+      @include respond-to("md") {
+        margin-bottom: -$spacing-6;
+      }
+
+      .plus {
+        font-size: 3.5rem;
+        font-weight: 500;
+        margin-top: 8px;
+
+        @include respond-to("md") {
+          font-size: 5rem;
+          margin-top: 12px;
+        }
+      }
+
+      .number {
+        font-size: 8rem;
+        font-weight: 700;
+        letter-spacing: -2px;
+
+        @include respond-to("md") {
+          font-size: 12rem;
+        }
+      }
+    }
+  }
+
+  .rightCol {
+    @include flex-column;
+    justify-content: center;
+
+    .textContent {
+      @include flex-column;
+      gap: $spacing-2;
+      border-left: 4px solid $terracota;
+      padding-left: $spacing-6;
+    }
+  }
+}
