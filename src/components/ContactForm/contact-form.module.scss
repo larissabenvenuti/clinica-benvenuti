@@ -1,0 +1,195 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.contato {
+  @include clean-section;
+  background-color: $white;
+  scroll-margin-top: 0 !important;
+
+  .container {
+    max-width: 56rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: $spacing-8;
+
+    h2 {
+      font-family: $font-family-serif;
+      font-size: 2.5rem;
+      color: $terracota;
+      margin-bottom: $spacing-2;
+      font-weight: 700;
+
+      @include respond-to("md") {
+        font-size: 3.5rem;
+      }
+    }
+
+    p {
+      color: $marrom-escuro;
+      font-size: $font-size-base;
+
+      @include respond-to("md") {
+        font-size: $font-size-lg;
+      }
+    }
+
+    .directContact {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+      scale: 0.8;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .whatsBtn {
+        background-color: #25d366;
+        color: $white;
+
+        &:hover {
+          background-color: #1ebe57;
+        }
+      }
+
+      .instaBtn {
+        background-color: #f0f0f0;
+        color: #333;
+
+        &:hover {
+          background-color: #e4e4e4;
+        }
+      }
+    }
+
+    .separator {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      position: relative;
+
+      p {
+        font-size: 0.9rem;
+        color: #666;
+        position: relative;
+        display: inline-block;
+        padding: 0 1rem;
+        background: transparent;
+      }
+    }
+  }
+
+  .form {
+    background-color: $bg-light;
+    padding: $spacing-6;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-soft;
+    border: 1px solid rgba($bege-marrom, 0.4);
+
+    @include respond-to("md") {
+      padding: $spacing-8 $spacing-12;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-2;
+
+      @include respond-to("md") {
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-4 $spacing-6;
+      }
+    }
+
+    .field {
+      @include flex-column;
+      gap: $spacing-2;
+      margin-bottom: $spacing-4;
+
+      label {
+        font-size: $font-size-xs;
+        font-weight: 600;
+        color: $marrom-escuro;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-left: $spacing-1;
+      }
+
+      input,
+      select {
+        @include input-base;
+        background-color: $white;
+      }
+
+      textarea {
+        @include input-base;
+        background-color: $white;
+        height: auto;
+        min-height: 80px;
+        padding-top: $spacing-2;
+        padding-bottom: $spacing-2;
+        resize: vertical;
+        @include custom-scrollbar;
+      }
+
+      .titleArea {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.15rem;
+      }
+
+      .star {
+        color: $terracota;
+        margin-left: 0.25rem;
+      }
+    }
+
+    .submitBtn {
+      @include button-base;
+      width: 100%;
+      background-color: $terracota;
+      color: $white;
+      padding: $spacing-4;
+      border-radius: $radius-full;
+      margin-top: $spacing-2;
+      font-size: $font-size-base;
+      font-weight: 600;
+      box-shadow: $shadow-soft;
+
+      &:hover {
+        background-color: darken($terracota, 10%);
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+      }
+    }
+
+    .success {
+      margin-top: $spacing-4;
+      text-align: center;
+      color: $salvia-escuro;
+      font-weight: 600;
+      font-size: $font-size-base;
+    }
+
+    .error {
+      margin-top: $spacing-4;
+      text-align: center;
+      color: $terracota;
+      font-weight: 600;
+      font-size: $font-size-base;
+    }
+  }
+}
