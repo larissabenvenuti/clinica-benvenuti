@@ -1,0 +1,147 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.footer {
+  background-color: $background;
+  border-top: 1px solid rgba($bege-marrom, 0.3);
+  padding: $spacing-12 $spacing-6 $spacing-8;
+
+  @include respond-to("lg") {
+    padding: $spacing-16 $spacing-12 $spacing-8;
+  }
+
+  .container {
+    max-width: 76rem;
+    margin: 0 auto;
+    width: 100%;
+    @include flex-column;
+    gap: $spacing-12;
+  }
+
+  .topSection {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-8;
+
+    @include respond-to("lg") {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: $spacing-16;
+    }
+  }
+
+  .brandInfo {
+    @include flex-column;
+
+    .brandName {
+      font-family: $font-family-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: $terracota;
+      line-height: 1.2;
+    }
+
+    .brandSub {
+      font-size: $font-size-xs;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: $marrom-escuro;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+  }
+
+  .warningBox {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-4;
+    background-color: rgba($bege-marrom, 0.1);
+    padding: $spacing-4;
+    border-radius: $radius-xl;
+    border-left: 3px solid $terracota;
+    max-width: 36rem;
+
+    .warningIcon {
+      color: $terracota;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    p {
+      font-size: $font-size-sm;
+      color: rgba($marrom-escuro, 0.85);
+      line-height: 1.6;
+
+      strong {
+        color: $terracota;
+        font-weight: 600;
+      }
+
+      a {
+        color: $terracota;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color $transition-fast;
+
+        &:hover {
+          color: $marrom-escuro;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .bottomSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-4;
+    border-top: 1px solid rgba($bege-marrom, 0.3);
+    padding-top: $spacing-8;
+    text-align: center;
+
+    @include respond-to("md") {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    p {
+      font-size: $font-size-xs;
+      color: rgba($marrom-escuro, 0.7);
+    }
+
+    .developer {
+      a {
+        color: $marrom-escuro;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all $transition-fast;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 1px;
+          bottom: -2px;
+          left: 0;
+          background-color: $terracota;
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+
+        &:hover {
+          color: $terracota;
+
+          &::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+        }
+      }
+    }
+  }
+}
