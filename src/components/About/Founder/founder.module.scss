@@ -1,0 +1,209 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.founder {
+  @include clean-section;
+  padding: $spacing-10 $spacing-6;
+  min-height: 90vh;
+  scroll-margin-top: 0 !important;
+
+  @include respond-to("lg") {
+    padding: $spacing-12 $spacing-12;
+  }
+
+  background-color: $background;
+  background:
+    radial-gradient(
+      circle at right center,
+      rgba($bege-marrom, 0.1) 0%,
+      transparent 50%
+    ),
+    $background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    max-width: 64rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-8;
+    align-items: center;
+
+    @include respond-to("lg") {
+      grid-template-columns: 1fr 340px;
+      gap: $spacing-12;
+    }
+
+    .textCol {
+      @include flex-column;
+      gap: $spacing-4;
+      order: 1;
+      padding-right: 0;
+
+      @include respond-to("lg") {
+        padding-right: $spacing-6;
+      }
+
+      .title {
+        font-family: $font-family-serif;
+        font-size: 2.5rem;
+        line-height: 1.1;
+        letter-spacing: -1px;
+        color: $terracota;
+
+        @include respond-to("md") {
+          font-size: 3rem;
+        }
+      }
+
+      .intro {
+        font-size: $font-size-base;
+        color: rgba($foreground, 0.85);
+        line-height: 1.6;
+        font-weight: 400;
+
+        strong {
+          color: $terracota;
+          font-weight: 600;
+        }
+      }
+
+      .list {
+        list-style: none;
+        @include flex-column;
+        gap: $spacing-2;
+
+        li {
+          font-size: $font-size-sm;
+          color: rgba($foreground, 0.8);
+          line-height: 1.4;
+          display: flex;
+          align-items: flex-start;
+          gap: $spacing-2;
+
+          .bullet {
+            margin-top: 6px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: $terracota;
+            flex-shrink: 0;
+            opacity: 0.6;
+          }
+        }
+      }
+
+      .formacoesContainer {
+        margin-top: $spacing-2;
+        margin-bottom: 0;
+      }
+
+      .accordionContainer {
+        border-top: 1px solid rgba($bege-marrom, 0.4);
+        border-bottom: 1px solid rgba($bege-marrom, 0.4);
+        width: 100%;
+        margin-top: 0;
+
+        .accordionTrigger {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: $spacing-4 0;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          font-family: $font-family-serif;
+          font-size: $font-size-lg;
+          color: $terracota;
+          text-align: left;
+          transition: color $transition-fast;
+
+          &:hover {
+            color: $marrom-escuro;
+
+            .icon {
+              color: $terracota;
+            }
+          }
+
+          .icon {
+            color: $salvia-escuro;
+            transition: color $transition-fast;
+          }
+        }
+
+        .accordionContentWrapper {
+          overflow: hidden;
+        }
+
+        .accordionContent {
+          padding-bottom: $spacing-4;
+
+          .conclusion {
+            font-size: $font-size-xs;
+            color: $salvia-escuro;
+            font-style: italic;
+            line-height: 1.5;
+            padding-left: $spacing-4;
+            border-left: 2px solid rgba($terracota, 0.3);
+            margin-top: $spacing-4;
+          }
+        }
+      }
+    }
+
+    .imageCol {
+      @include flex-column;
+      align-items: center;
+      position: relative;
+      order: 2;
+      width: fit-content;
+      margin: 0 auto;
+
+      .imgBox {
+        position: relative;
+        width: 280px;
+        height: 360px;
+        border-radius: 160px 160px 20px 20px;
+        overflow: hidden;
+        box-shadow: 0 16px 32px rgba($marrom-escuro, 0.08);
+
+        @include respond-to("md") {
+          width: 320px;
+          height: 420px;
+        }
+
+        .img {
+          object-fit: cover;
+          transition: transform 0.8s ease;
+
+          &:hover {
+            transform: scale(1.04);
+          }
+        }
+      }
+
+      .crpBadge {
+        position: absolute;
+        bottom: -16px;
+        background: $white;
+        color: $marrom-escuro;
+        padding: $spacing-2 $spacing-6;
+        border-radius: $radius-full;
+        font-size: $font-size-xs;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 8px 24px rgba($marrom-escuro, 0.1);
+        border: 1px solid rgba($bege-marrom, 0.3);
+        z-index: 2;
+      }
+    }
+  }
+}

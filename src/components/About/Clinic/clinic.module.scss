@@ -1,0 +1,142 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.clinic {
+  @include clean-section;
+  padding: $spacing-4;
+  min-height: 80vh;
+
+  @include respond-to("lg") {
+    padding: $spacing-4 $spacing-12;
+  }
+
+  background-color: $white;
+  background-image: linear-gradient(
+    to bottom,
+    $white 70%,
+    rgba($bege-amarelo, 0.15) 100%
+  );
+
+  .container {
+    max-width: 80rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .headerBlock {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto $spacing-16 auto;
+
+    h2 {
+      font-size: 3rem;
+      color: $terracota;
+      margin-bottom: $spacing-4;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+
+      @include respond-to("md") {
+        font-size: 3.75rem;
+      }
+    }
+
+    .lead {
+      font-size: $font-size-xl;
+      color: $salvia-escuro;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+  }
+
+  .contentGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-12;
+    align-items: center;
+
+    @include respond-to("lg") {
+      grid-template-columns: 1fr 1.15fr;
+      gap: $spacing-24;
+    }
+
+    .imageWrapper {
+      position: relative;
+      height: 380px;
+      border-radius: $radius-xl;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba($marrom-escuro, 0.08);
+      border: 1px solid rgba($bege-marrom, 0.4);
+
+      @include respond-to("md") {
+        height: 480px;
+      }
+
+      .img {
+        object-fit: cover;
+        transition: transform 0.8s ease;
+
+        &:hover {
+          transform: scale(1.03);
+        }
+      }
+    }
+
+    .textWrapper {
+      @include flex-column;
+      gap: $spacing-8;
+
+      .paragraph {
+        font-size: $font-size-lg;
+        color: $marrom-escuro;
+        line-height: 1.8;
+        font-weight: 400;
+
+        strong {
+          color: $terracota;
+          font-weight: 600;
+        }
+      }
+
+      .listContainer {
+        padding-top: $spacing-8;
+        border-top: 1px solid rgba($bege-marrom, 0.6);
+
+        h4 {
+          font-family: $font-family-serif;
+          font-size: $font-size-2xl;
+          color: $terracota;
+          margin-bottom: $spacing-8;
+          font-weight: 600;
+        }
+
+        ul {
+          list-style: none;
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: $spacing-6;
+
+          @include respond-to("md") {
+            grid-template-columns: 1fr 1fr;
+            gap: $spacing-6 $spacing-8;
+          }
+
+          li {
+            font-size: $font-size-sm;
+            color: rgba($foreground, 0.85);
+            display: flex;
+            align-items: flex-start;
+            gap: $spacing-4;
+            line-height: 1.6;
+
+            .icon {
+              color: $salvia-escuro;
+              flex-shrink: 0;
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
