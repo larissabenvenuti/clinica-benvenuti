@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./whatsapp.module.scss";
 
 export default function WhatsAppButton() {
@@ -5,11 +7,29 @@ export default function WhatsAppButton() {
   const mensagem = "Olá! Gostaria de agendar uma consulta!";
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    const openWhatsApp = () => {
+      window.open(url, "_blank", "noopener,noreferrer");
+    };
+
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "conversion", {
+        send_to: "AW-18509602848/BauaCPXY8ZodEKDAiPpE",
+        event_callback: openWhatsApp,
+      });
+      
+      setTimeout(openWhatsApp, 1000);
+    } else {
+      openWhatsApp();
+    }
+  };
+
   return (
     <a
       href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+      onClick={handleClick}
       className={styles.whatsappBtn}
       aria-label="Falar no WhatsApp"
     >
