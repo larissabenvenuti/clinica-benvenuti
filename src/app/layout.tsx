@@ -34,6 +34,20 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${playfair.variable} ${montserrat.variable}`}
     >
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18509602848"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'AW-18509602848');
+            `,
+          }}
+        />
+      </head>
       <body>
         {children}
         <WhatsAppButton />
