@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./contact-form.module.scss";
@@ -70,6 +71,32 @@ export default function ContactForm() {
     }
   };
 
+  const handleConversionClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    url: string,
+  ) => {
+    e.preventDefault();
+
+    const openLink = () => {
+      window.open(url, "_blank", "noopener,noreferrer");
+    };
+
+    if (typeof window !== "undefined" && typeof window.gtag !== "undefined") {
+      window.gtag("event", "conversion", {
+        send_to: "AW-18509602848/BauaCPXY8ZodEKDAiPpE",
+        event_callback: openLink,
+      });
+
+      setTimeout(openLink, 1000);
+    } else {
+      openLink();
+    }
+  };
+
+  const whatsappUrl =
+    "https://wa.me/5524999253942?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta!";
+  const instagramUrl = "https://www.instagram.com/clinicabenvenuti/";
+
   return (
     <section id="contato" className={styles.contato}>
       <div className={styles.container}>
@@ -85,19 +112,19 @@ export default function ContactForm() {
 
           <div className={styles.directContact}>
             <a
-              href="https://wa.me/5524999253942?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta!"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={whatsappUrl}
+              onClick={(e) => handleConversionClick(e, whatsappUrl)}
               className={styles.whatsBtn}
+              aria-label="Falar no WhatsApp"
             >
               <WhatsAppIcon />
               WhatsApp
             </a>
             <a
-              href="https://www.instagram.com/clinicabenvenuti/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={instagramUrl}
+              onClick={(e) => handleConversionClick(e, instagramUrl)}
               className={styles.instaBtn}
+              aria-label="Acessar Instagram"
             >
               <InstagramIcon />
               clinicabenvenuti
