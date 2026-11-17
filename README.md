@@ -1,46 +1,88 @@
+<div align="center">
+
 # 🌿 Clínica Benvenuti — Psicologia & Saúde
 
-Bem-vindo ao repositório oficial do site da Clínica Benvenuti Psicologia & Saúde. Arquitetada e desenvolvida por **Larissa Benvenuti**, esta experiência digital foi projetada para apresentar o trabalho clínico, as abordagens e os serviços da clínica através de uma interface editorial, acolhedora e profundamente elegante. 
+**A calm, editorial website for a psychology clinic: it presents the clinical work, the therapeutic approaches and how to book a session.**
 
-O design foge de layouts engessados, apostando em um estilo visual *clean*, elementos fluidos, tipografia refinada e animações orgânicas que transmitem equilíbrio e leveza.
+![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![SCSS](https://img.shields.io/badge/SCSS-CC6699?logo=sass&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?logo=framer&logoColor=white)
+![Resend](https://img.shields.io/badge/Resend-000000?logo=resend&logoColor=white)
 
-## 🌐 Live Preview
-Você pode explorar o projeto completo, totalmente funcional e interativo aqui:  
-**[clinicabenvenuti.com](https://clinicabenvenuti.com)**
+[🌐 Live site: clinicabenvenuti.com](https://clinicabenvenuti.com)
 
----
+</div>
 
-## 🚀 Tecnologias Utilizadas
-Este projeto foi construído com foco em performance, UI/UX moderna e interações suaves:
+![Clínica Benvenuti hero](docs/screenshots/hero.png)
 
-* **Next.js (App Router):** Framework principal escolhido por seu roteamento rápido, renderização otimizada (Server Components) e excelente SEO.
-* **React:** Utilizado para construir componentes de interface modulares, interativos e dinâmicos.
-* **Framer Motion:** Implementado para transições de página fluidas, animações de *scroll reveal* e formas orgânicas (como a esfera do Hero).
-* **SCSS / CSS Modules:** Arquitetura de estilos escalável, utilizando variáveis, mixins responsivos e escopo local para manter a estética *clean*, o *glassmorphism* e o layout de 100vh por seção.
-* **Lucide React:** Biblioteca de ícones vetoriais minimalistas e modernos que complementam a tipografia.
-* **Resend API:** Integração back-end segura para o envio em tempo real dos e-mails capturados no formulário de contato.
+## ⚡ At a glance
 
----
+- **Real client project**, live in production.
+- **Goal:** turn a clinic's presence into a welcoming experience that builds trust and makes it easy to book a first session.
+- **Design direction:** clean, editorial layout with fine typography and organic motion, avoiding rigid templates.
+- **My role:** UI/UX design and front-end engineering. The clinic's founder provided the content.
 
-## 📂 Funcionalidades & Seções
-* **Hero Imersivo:** Uma introdução visualmente limpa com tipografia marcante (Playfair Display) e uma forma orgânica fluida, destacando o atendimento global (online) da clínica.
-* **A Clínica:** Apresentação em formato de revista (editorial) detalhando o espaço ético, o público-alvo e a listagem de demandas de saúde mental com espaçamento generoso.
-* **Perfil da Fundadora:** Uma biografia estruturada da psicóloga Eduarda Benvenuti, incluindo um *accordion* animado para detalhar sua trajetória acadêmica e certificações.
-* **Abordagens (PBE):** Cards interativos que explicam de forma clara a TCC, ACT e DBT, com interações suaves de *hover*.
-* **FAQ Interativo:** Sistema expansível elegante para sanar dúvidas comuns de pacientes, como pagamentos, convênios e formato de sessões.
-* **Formulário de Contato:** Uma interface de comunicação direta, validada e conectada via API (Resend) para facilitar o agendamento de consultas.
+## ✨ Sections
 
----
+| Section | What it does |
+|---|---|
+| 🌀 **Hero** | Clean introduction with bold typography and a fluid organic shape, highlighting online care available worldwide |
+| 🏛️ **The clinic** | Magazine-style presentation of the ethical approach, the target audience and the mental-health topics treated |
+| 👩‍⚕️ **Founder profile** | Structured biography with an animated accordion for academic background and certifications |
+| 🧠 **Approaches** | Interactive cards explaining CBT, ACT and DBT with smooth hover interactions |
+| ❓ **FAQ** | Expandable answers about payments, health plans and session format |
+| ✉️ **Contact form** | Validated form that delivers messages by email through the Resend API |
 
-## 👩‍💻 Créditos
-* **Desenvolvimento, Engenharia Front-end & UI/UX:** Larissa Benvenuti
-* **Fundadora, Psicóloga Responsável & Textos:** Eduarda Benvenuti (CRP 05/81279)
+## 📸 Screens
 
----
+| The clinic | Founder profile |
+|---|---|
+| ![](docs/screenshots/clinic.png) | ![](docs/screenshots/founder.png) |
 
-## 🔒 Copyright & Licença
-**Todos os Direitos Reservados.**
+| Approaches | FAQ |
+|---|---|
+| ![](docs/screenshots/approaches.png) | ![](docs/screenshots/faq.png) |
 
-Este projeto está sob estrita proteção de direitos autorais. Todos os direitos referentes ao código-fonte, design de interface, arquitetura visual e lógica de componentes presentes neste repositório são de propriedade exclusiva de **Larissa Benvenuti** (Desenvolvedora Front-end). O conteúdo textual, nome, imagens pessoais e marca registrada pertencem a **Eduarda Benvenuti** e à **Clínica Benvenuti - Psicologia & Saúde**.
+| Contact form | Mobile |
+|---|---|
+| ![](docs/screenshots/contact.png) | ![](docs/screenshots/mobile.png) |
 
-A reprodução, distribuição, modificação, exibição pública ou uso comercial — seja total ou parcial — sem a autorização expressa por escrito dos detentores dos direitos autorais é estritamente proibida.
+## 🏗️ Technical highlights
+
+- **Next.js App Router with Server Components** for fast rendering and strong SEO, which matters for a business found through search.
+- **SCSS Modules** with variables and responsive mixins, keeping styles scoped and the glassmorphism look consistent, with a 100vh layout per section.
+- **Framer Motion** for page transitions, scroll-reveal animations and the organic Hero shape.
+- **Contact form handled on the server:** inputs are validated and sent through the **Resend API**, so the API key never reaches the browser.
+- **Lucide React** icons that match the typography (Playfair Display for headings).
+
+## 🛠️ Run locally
+
+```bash
+git clone https://github.com/larissabenvenuti/[nome-do-repo].git
+cd [nome-do-repo]
+npm install
+npm run dev
+```
+
+Create a `.env.local` file:
+
+```env
+RESEND_API_KEY=your-resend-api-key
+```
+
+Get the key at [resend.com](https://resend.com/) under **API Keys**. Open http://localhost:3000.
+
+
+## 👩‍💻 Credits
+
+- **Development, front-end engineering & UI/UX:** Larissa Benvenuti
+- **Founder, lead psychologist & copywriting:** Eduarda Benvenuti (CRP 05/81279)
+
+## 🔒 Copyright & license
+
+**All rights reserved.**
+
+The source code, interface design, visual architecture and component logic in this repository belong exclusively to **Larissa Benvenuti**. The text content, name, personal images and trademark belong to **Eduarda Benvenuti** and **Clínica Benvenuti — Psicologia & Saúde**.
+
+Reproduction, distribution, modification, public display or commercial use, in whole or in part, without the written permission of the rights holders is strictly prohibited.
