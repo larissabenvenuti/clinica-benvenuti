@@ -59,8 +59,8 @@
 ## 🛠️ Run locally
 
 ```bash
-git clone https://github.com/larissabenvenuti/[nome-do-repo].git
-cd [nome-do-repo]
+git clone https://github.com/larissabenvenuti/clinica-benvenuti.git
+cd clinica-benvenuti
 npm install
 npm run dev
 ```
